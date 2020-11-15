@@ -1,0 +1,278 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+section {
+  padding: 7em 0;
+}
+
+/* modal liikkuvaan ostoskoriin*/ 
+.modal{
+  display: none; /* Hidden by default */
+  position: sticky; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 20%; /* Full width */
+  height: 20%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+.container {
+  width: 85%;
+  max-width: 65em;
+  margin: 0 auto;
+}
+
+/* ei käytössä*/
+.container_pohja {
+    height: 5%;
+    max-width: 25em;
+    margin: 0 auto;
+  }
+
+.split {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.split > * {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  min-width: 15em;
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+.spacing2 > * + * {
+    margin-top: var(--spacer, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--clr-text, #fff);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  padding: .5em 1.25em;
+  background: var(--clr-accent, blue);
+  border-radius: .25em;
+  -webkit-transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear;
+  transition: transform 250ms ease-in-out,
+ opacity 250ms linear,
+ -webkit-transform 250ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  opacity: .8;
+}
+
+.primary-otsikko {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vw + 1rem), 4.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.section-otsikko {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vw + 1rem), 4rem);
+  line-height: 1;
+  color: #17352d;
+  margin-bottom: 5rem;
+}
+
+.banneri {
+  color: white;
+  text-align: center;
+  padding: 15em 0;
+  background: #221;
+}
+
+@supports (background-blend-mode: multiply) {
+  .banneri {
+    background: url(../img/oulu.png), radial-gradient(rgb(52, 46, 47), #112);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+
+.esittely {
+  background: #eee;
+}
+
+.esittely__item {
+  display: block;
+  position: relative;
+  -webkit-transform: scale(0.85);
+          transform: scale(0.85);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.esittely__item:hover, .esittely__item:focus {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.esittely__item:hover .esittely__yksityiskohta, .esittely__item:focus .esittely__yksityiskohta {
+  opacity: 1;
+  text-shadow: 0 0 2em white;
+}
+
+.esittely__item::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 75% 75% 0 0;
+  border-radius: 50%;
+  background: #2193b0;
+  z-index: -1;
+}
+
+.esittely__yksityiskohta {
+  opacity: 0;
+  -webkit-transition: opacity 250ms linear;
+  transition: opacity 250ms linear;
+}
+
+.esittely__yksityiskohta span {
+  display: block;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.tuote {
+  background: radial-gradient(var(--clr-inner, limegreen), var(--clr-outer, purple));
+  padding: 3em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  text-align: center;
+}
+
+.tuote__otsikko {
+  font-size: clamp(3rem, calc(5vw + 1rem), 5.5rem);
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+.tuote__image {
+  margin: -5em 0 0 0;
+}
+
+@media (min-width: 45em) {
+  .tuote {
+    text-align: left;
+    margin-bottom: 9em;
+  }
+  .tuote__otsikko {
+    margin: 0;
+  }
+  .tuote__image {
+    float: right;
+    width: 65%;
+    shape-outside: url(../img/burgeri1.png);
+    shape-margin: 1em;
+    margin: 0 -5em 0 0;
+  }
+  .tuote.burger-left .tuote__image {
+    float: left;
+    shape-outside: url(../img/burgeri2.png);
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+  }
+  .tuote.burger-middle.tuote__image{
+    
+    shape-outside: url(../img/fries1.png);
+    margin: 0 0 0 -5em;
+    shape-margin: 2em;
+
+  }
+}
+
+.banneri {
+  --clr-accent: #faa700;
+}
+
+.burger-red {
+  --clr-inner: #faa700;
+  --clr-outer: #e48d00;
+  --clr-accent: #a1173c;
+}
+
+.burger-white {
+  --clr-inner: #fce4b3;
+  --clr-outer: #eac886;
+  --clr-accent: #2f4858;
+}
+
+.burger-blue {
+  --clr-inner: #6dd5ed;
+  --clr-outer: #2193b0;
+  --clr-accent: #008951;
+}
+.burger-yellow {
+    --clr-inner: #edd56d;
+    --clr-outer: #a6b021;
+    --clr-accent: #008951;
+  }
