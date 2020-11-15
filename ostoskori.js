@@ -1,13 +1,17 @@
+/* ostoskori ei säily sessiosta toiseen.
+TODO: sessionstorage tai uploadi serverille */
+
 var ostoskori = [];
-var hinta;
+var ostonkorinHinta = 0;
 
-function lisaaTuote () {
-
+function lisaaTuote (nimi, hinta) {
+    ostoskori.push("nimi");
+    ostoskorinHinta += hinta;
 };
 
 function laskeHinta (){
 
 }
-function confirm() {
-    confirm("Press a button!");
-}
+/*function confirm() {
+    confirm("Hyväksy");
+} */
