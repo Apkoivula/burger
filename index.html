@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" />
   <script src="ostoskori.js"></script> 
-</head>
+  </head>
 
 <body>
 
@@ -17,7 +17,7 @@
     <div class="container spacing">
       <h1 class="primary-otsikko">Arppen grilli!<br> Kaikenlaista ruokaa!</h1>
       <p>Vain tuoretta lihaa ilman lisäaineita kotiin kuljetettuna! Pelkästään paikallista Oululaista lihaa pilttuusta pöytään.</p>
-      <!--<a href="#" class="btn">Tarjonta</a> lisää funktio-->
+      
     </div>
   </header>
 
@@ -26,20 +26,28 @@
 
 
   <main>
-<!-- napit eivät tee vielä mitään. Joko ostoskorifunktionaalisuus tai linkki toiselle sivulle?-->
+    <div class="kori" id="kori">
+        
+        <button type="button" onclick="laskeHinta()" class="btn_cart">Ostoskärryyn</button>
+        <p class="kori-content" id="hintaOstoskorissa">€</p>
+        
+      </div>
+
+
+<!-- tarjoustuotteet napit eivät tee vielä mitään. Joko ostoskorifunktionaalisuus tai linkki toiselle sivulle-->
     <section class="esittely">
       <div class="container">
         <h2 class="section-otsikko">Tarjoustuotteet</h2>
         <div class="split">
-          <a href="#" class="esittely__item">
+          <a href="" class="esittely__item">
             <img src="img/soup1.png" alt="" class="esittely__img">
             <p class="esittely__yksityiskohta"><span class="price">6€</span>Lihakeitto</p>
           </a>
-          <a href="#" class="esittely__item">
+          <a href="" class="esittely__item">
             <img src="img/chicken1.png" alt="" class="esittely__img">
             <p class="esittely__yksityiskohta"><span class="price">9€</span>Chilikana</p>
           </a>
-          <a href="#" class="esittely__item">
+          <a href="" class="esittely__item">
             <img src="img/meatballs1.png" alt="" class="esittely__img">
             <p class="esittely__yksityiskohta"><span class="price">3€</span>Ruotsalaiset lihapullat</p>
           </a>
@@ -56,38 +64,36 @@
           <img src="img/burgeri1.png" alt="" class="tuote__image">
           <h3 class="tuote__otsikko">Perusburgeri</h3>
           <p class="tuote__description">Tuplanautaburgeri ketsupilla tai ilman.Tällä lähtee jo isompikin nälkä. Tai voit jättää vaikka huomisen krapulaan!</p>
-          <a href="" class="btn">Osta nyt 12€!</a>
+          <button type="button" onclick="lisaaTuote( 'Tuplaburgeri',12)" class="btn">Osta nyt 12€!</button> 
+          
         </article>
 
         <article class="tuote burger-white burger-left spacing">
           <img src="img/burgeri2.png" alt="" class="tuote__image">
           <h3 class="tuote__otsikko">Kakkosburgeri</h3>
           <p class="tuote__description">Perusjuustopurilainen vihreillä kasviksilla.Lähes vegaaninen.</p>
-          <a href="" class="btn">Osta nyt 6€!</a>
+          <button type="button" onclick="lisaaTuote( 'Burgeri',6)"class="btn">Osta nyt 6€!</button>
         </article>
 
         <article class="tuote burger-blue spacing">
           <img src="img/fries3.png" alt="" class="tuote__image">
           <h3 class="tuote__otsikko">Suolatut ranskalaiset</h3>
           <p class="tuote__description">Melkein kuin suoraan MacDonaldsista! Mausteina suola. Perunat ovat Pohjanmaalta. Kevytrasvassa paistettuja joten sopivat myös laihduttajalle.</p>
-          <a href="" class="btn">Osta nyt 4€!</a>
+          <button type="button" onclick="lisaaTuote( 'Fries',4)"class="btn">Osta nyt 4€!</button>
         </article>
         
         <article class="tuote burger-middle spacing">
             <img src="img/wrap.png" alt="" class="tuote__image">
             <h3 class="tuote__otsikko">Yllätyslihawrap</h3>
             <p class="tuote__description">Syksyn perinteinen ruoka on tämä talon oma yllätyswrap. Sisältää kolmea lihaan verrattavaa prosessoitua lihatuotetta sekä vihanneksia ja muita kasveja.</p>
-            <a href="" class="btn">Osta nyt 3€!</a>
+            <button type="button" onclick="lisaaTuote( 'Wrap',3)" class="btn">Osta nyt 3€!</button>
           </article>
 
       </div>
+      
     </section>
-<!-- 
-    <section class="Pohja">
-        <div class="container_pohja">
-            
-        </div>
-    </section>-->
+    
+    
   </main>
 
 </body>

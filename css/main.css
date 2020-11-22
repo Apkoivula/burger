@@ -24,30 +24,58 @@ p {
 }
 
 section {
-  padding: 7em 0;
+  padding: 4em 0;
 }
 
 /* modal liikkuvaan ostoskoriin*/ 
 .modal{
-  display: none; /* Hidden by default */
-  position: sticky; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: display-box; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
-  width: 20%; /* Full width */
-  height: 20%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 20%; 
+  height: 20%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
   }
+
+  .kori{
+    position: fixed;
+    display: none;
+    bottom: 10%;
+    left: 5%;
+    padding: 10px;
+    border: 2px;
+    background-color: #008951;
+    z-index: 2;
+
+    
+  }
+
+  .kori-content{
+    font-size: 1.525rem;
+    padding: .5em 1.25em;
+    font-weight: 500;
+    text-align: center;
+
+  }
+
+.btn_cart{
+  font-weight: 700;
+  text-transform: uppercase;
+   font-size: 1.125rem;
+
+}
 
 .container {
   width: 85%;
@@ -95,6 +123,7 @@ section {
   text-transform: uppercase;
   font-size: 1.125rem;
   padding: .5em 1.25em;
+
   background: var(--clr-accent, blue);
   border-radius: .25em;
   -webkit-transition: opacity 250ms linear,
@@ -113,6 +142,10 @@ section {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   opacity: .8;
+}
+.btn:active{
+  opacity: 1,0;
+  transform: scale(1.0);
 }
 
 .primary-otsikko {
